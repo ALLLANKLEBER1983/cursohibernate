@@ -27,23 +27,27 @@
     </dependency>
     
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+    
 	<dependency>
 	    <groupId>org.postgresql</groupId>
 	    <artifactId>postgresql</artifactId>
-	    <version>9.4-1200-jdbc41</version>
+	    <version>9.2-1003-jdbc4</version>
+	    <scope>compile</scope>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
-	    <version>5.2.6.Final</version>
+	    <version>4.3.8.Final</version>
+	    <scope>compile</scope>
 	</dependency>
 	
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-entitymanager</artifactId>
-	    <version>5.2.6.Final</version>
+	    <version>4.3.8.Final</version>
+	    <scope>compile</scope>
 	</dependency>
 	
 	    
