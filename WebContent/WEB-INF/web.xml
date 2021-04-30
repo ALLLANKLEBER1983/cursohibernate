@@ -2,6 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>pos-java-maven-hibernate</display-name>
   
+  <mime-mapping>
+   <extension>jsp</extension>
+   <mime-type>application/jsp</mime-type>
+</mime-mapping>   
+  
   
   <welcome-file-list>
     <welcome-file>index.jsf</welcome-file>
