@@ -18,7 +18,7 @@
     </h:form>
 
 	<h:form>
-		<h:messages showDetail="true" showSummary="false" />
+		
 		<p:panelGrid columns="2">
 			<h:outputLabel>Id:</h:outputLabel>
 			<p:inputText readonly="true"
@@ -26,11 +26,11 @@
 
 			<h:outputLabel>Nome:</h:outputLabel>
 			<p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.nome}"
-				required="true" requiredMessage="Informe o nome" />
+				 />
 
 			<h:outputLabel>Sobrenome:</h:outputLabel>
 			<p:inputText
-				value="#{usuarioPessoaManagedBean.usuarioPessoa.sobrenome}" />
+				value="#{usuarioPessoaManagedBean.usuarioPessoa.sobrenome}"  />
 
 			<h:outputLabel>Email:</h:outputLabel>
 			<p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.email}" />
@@ -43,6 +43,12 @@
 
 			<h:outputLabel>Idade:</h:outputLabel>
 			<p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.idade}" />
+			
+			<h:outputLabel>Sexo</h:outputLabel>
+			<h:selectOneMenu value="#{usuarioPessoaManagedBean.usuarioPessoa.sexo}">
+				<f:selectItem itemValue="Masculino"/>
+				<f:selectItem itemValue="Feminino"/>
+			</h:selectOneMenu>
 		</p:panelGrid>
 		<br />
 		<p:commandButton value="Salvar"
@@ -67,6 +73,10 @@
 				<h:outputText value="#{user.sobrenome}" />
 			</p:column>
 			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<h:outputText value="#{user.email}" />
+			</p:column>
+			<p:column>
 				<f:facet name="header">Login</f:facet>
 				<h:outputText value="#{user.login}" />
 			</p:column>
@@ -79,18 +89,27 @@
 				<h:outputText value="#{user.idade}" />
 			</p:column>
 			<p:column>
+				<f:facet name="header">Sexo</f:facet>
+				<h:outputText value="#{user.sexo}" />
+			</p:column>
+			
+			<p:column>
 				<f:facet name="header">Editar</f:facet>
-				<p:commandLink value="Editar">
+				<p:commandLink  immediate="true" id="botaoeditar">
+				<h:graphicImage url="resources/img/editar.png" width="25" height="25" />
 					<f:setPropertyActionListener value="#{user}"
-						target="#{usuarioPessoaManagedBean.usuarioPessoa}"></f:setPropertyActionListener>
+						target="#{usuarioPessoaManagedBean.usuarioPessoa}"/>
+						<f:ajax execute="botaoeditar" render="@form" />
 				</p:commandLink>
 			</p:column>
 			<p:column>
 				<f:facet name="header">Excluir</f:facet>
-				<p:commandLink value="Excluir"
+				<p:commandLink immediate="true"
 					action="#{usuarioPessoaManagedBean.remover}">
+					<h:graphicImage url="resources/img/delete2.jfif" width="25" height="25" />
 					<f:setPropertyActionListener value="#{user}"
 						target="#{usuarioPessoaManagedBean.usuarioPessoa}"></f:setPropertyActionListener>
+					
 				</p:commandLink>
 			</p:column>
 		</p:dataTable>

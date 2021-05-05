@@ -21,7 +21,7 @@ public class UsuarioPessoaManagedBean {
 	
 	public String salvar() {
 		daoGeneric.salvar(usuarioPessoa);
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Informação","Salvo com sucesso!"));
+		//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Informação","Salvo com sucesso!"));
 		return "";
 	}
 	
@@ -32,7 +32,7 @@ public class UsuarioPessoaManagedBean {
 	
 	public String remover() {
 		daoGeneric.deletarPorId(usuarioPessoa);
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Informação","Removido com sucesso!"));
+		//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Informação","Removido com sucesso!"));
 		usuarioPessoa = new UsuarioPessoa();
 		return "";
 	}
