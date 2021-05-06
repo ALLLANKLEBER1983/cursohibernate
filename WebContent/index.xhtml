@@ -17,8 +17,8 @@
     	</p:breadCrumb>
     </h:form>
 
-	<h:form>
-		
+	<h:form id="formulario">
+		<p:messages showDetail="true" showSummary="false" id="msg"/>
 		<p:panelGrid columns="2">
 			<h:outputLabel>Id:</h:outputLabel>
 			<p:inputText readonly="true"
@@ -26,7 +26,7 @@
 
 			<h:outputLabel>Nome:</h:outputLabel>
 			<p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.nome}"
-				 />
+				 required="true" requiredMessage=" Campo nome é obrigatório"/>
 
 			<h:outputLabel>Sobrenome:</h:outputLabel>
 			<p:inputText
@@ -105,11 +105,11 @@
 			<p:column>
 				<f:facet name="header">Excluir</f:facet>
 				<p:commandLink immediate="true"
-					action="#{usuarioPessoaManagedBean.remover}">
+					action="#{usuarioPessoaManagedBean.remover}" id="botaoremover">
 					<h:graphicImage url="resources/img/delete2.jfif" width="25" height="25" />
 					<f:setPropertyActionListener value="#{user}"
 						target="#{usuarioPessoaManagedBean.usuarioPessoa}"></f:setPropertyActionListener>
-					
+					<f:ajax execute="botaoremover" render="@form" />
 				</p:commandLink>
 			</p:column>
 		</p:dataTable>
