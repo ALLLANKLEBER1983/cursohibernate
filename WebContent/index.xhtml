@@ -18,7 +18,7 @@
     </h:form>
 
 	<h:form id="formulario">
-		<p:messages showDetail="true" showSummary="false" id="msg"/>
+		<h:messages showDetail="true" showSummary="false" id="msg"/>
 		<p:panelGrid columns="2">
 			<h:outputLabel>Id:</h:outputLabel>
 			<p:inputText readonly="true"
@@ -57,7 +57,7 @@
 			action="#{usuarioPessoaManagedBean.novo}" />
 		<br />
 		<br />
-		<p:dataTable value="#{usuarioPessoaManagedBean.list}" var="user"
+		<p:dataTable value="#{usuarioPessoaManagedBean.lista}" var="user"
 			cellpadding="15" border="1">
 			<f:facet name="header">Lista de Usuários</f:facet>
 			<p:column>

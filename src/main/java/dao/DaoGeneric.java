@@ -25,6 +25,7 @@ public class DaoGeneric<T> {
 		
 		Object id = HibernateUtil.getPrimarykey(entidade);
 		
+		@SuppressWarnings("unchecked")
 		T e = (T) entityManager.find(entidade.getClass(), id);
 		
 		return e;
@@ -54,6 +55,7 @@ public class DaoGeneric<T> {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<T> listar (Class<T> entidade){
 		
 		EntityTransaction transaction = entityManager.getTransaction();

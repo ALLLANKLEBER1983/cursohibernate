@@ -54,7 +54,7 @@ public class UsuarioPessoaManagedBean {
 		this.usuarioPessoa = usuarioPessoa;
 	}
 
-	public List<UsuarioPessoa> getList() {
+	public List<UsuarioPessoa> getLista() {
 		list = daoGeneric.listar(UsuarioPessoa.class);
 		return list;
 	}
